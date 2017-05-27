@@ -3,12 +3,25 @@
 @import 'libs';
 @import 'vars';
 
+body {
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.75;
+	font-family: $default-font;
+	overflow-x: hidden;
+	opacity: 1;
+}
+a {
+	outline: none;
+}
 
 
 
 
 
-
-
-
+//to end
 @import 'media';
+
+//scss plugins
+@import 'app/libs/font-awesome/scss/font-awesome';

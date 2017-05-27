@@ -40,7 +40,7 @@ gulp.task('scripts', function() {
 gulp.task('sass', function() {
     return gulp.src('app/sass/*.scss')
         .pipe(sass())
-        .pipe(concat('main.css'))
+        .pipe(concat('main.min.css'))
         .pipe(uglifycss({
             "maxLineLen": 80,
             "uglyComments": true
