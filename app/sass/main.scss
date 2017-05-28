@@ -19,10 +19,26 @@ a {
 	outline: none;
 }
 
+h2 {
+	color: #2d394f;
+	font-size: 40px;
+}
+
+h3 {
+	color: #2d394f;
+	font-size: 22px;
+}
+
+h4 {
+	color: #fff;
+	font-size: 41px;
+}
+
 .logo {
 	margin-top: 30px;
 	margin-bottom: 30px;
-text-align: center;
+	text-align: center;
+
 	a {
 		color: #2d394f;
 		font-family: "Lato";
@@ -43,12 +59,11 @@ text-align: center;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-text-align: right;
+		text-align: right;
 	}
 
 	li {
 		display: inline-block;
-		font-family: $main-color;
 		font-size: 16px;
 		padding: 38px 25px;
 
@@ -56,8 +71,7 @@ text-align: right;
 			color: $main-color;
 
 			&:active,
-			&:focus {
-			}
+			&:focus {}
 
 			&:hover {
 				color: $accent-color;
@@ -100,8 +114,9 @@ text-align: right;
 		font-size: 20px;
 		margin-bottom: 64px;
 	}
-  .down-link {
-margin-top: 5%;
+
+	.down-link {
+		margin-top: 5%;
 		color: #fff;
 		font-size: 26px;
 		display: block;
@@ -114,18 +129,118 @@ margin-top: 5%;
 	color: #fff;
 	padding: 23px 32px;
 	text-decoration: none;
+
 	&:visited {
-				color: #fff;
+		color: #fff;
 		text-decoration: none;
 	}
+
 	&:hover {
 		background-color: darken($accent-color, 15);
 		text-decoration: none;
 		color: #fff;
+
 		&:active {
 			text-decoration: none;
 			background-color: darken($accent-color, 25);
 		}
+	}
+}
+
+.about-section {
+	padding-top: 30px;
+	text-align: center;
+	height: 338px;
+
+	p {
+		color: #999;
+		font-size: 20px;
+	}
+}
+
+.desc-section {
+	text-align: center;
+	background-color: #fff;
+
+	p {
+		color: #999;
+		font-size: 15px;
+		margin-bottom: 8%;
+	}
+
+	.icon {
+		margin-top: 10%;
+		margin-bottom: 10%;
+		display: inline-block;
+		height: 100px;
+		width: 100px;
+		background: linear-gradient(to right, #48BAFF 50%, #5FC3FF 50%);
+
+		.fa {
+			color: #fff;
+			margin-top: 21px;
+			font-size: 58px;
+			text-shadow: 1px 1px 2px black;
+		}
+	}
+}
+
+.work-section {
+	text-align: center;
+
+	p {
+		margin-bottom: 8%;
+		color: #999;
+		font-size: 15px;
+	}
+}
+
+.work-item {
+	cursor: pointer;
+	&:hover {
+		&:before {
+			position: absolute;
+			content: '';
+			height: 260px;
+			width: 360px;
+			top: 0;
+			left: 15px;
+			background-color: $accent-color;
+			opacity: 0.6;
+			z-index: 2;
+			transition: all .5s ease;
+		}
+	}
+
+	&-img {
+		width: 360px;
+		height: 260px;
+		background-size: cover;
+	}
+}
+
+.contact-section {
+	margin-top: 8%;
+	height: 676px;
+	text-align: center;
+	background: url('../img/contact-bg.jpg');
+	background-size: cover;
+	position: relative;
+
+	p {
+		color: #999;
+		font-size: 15px;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0.9;
+		background-color: #2d394f;
 	}
 }
 //to end
