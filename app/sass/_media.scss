@@ -50,6 +50,14 @@
     .work-item-img {
       height: 150px;
       width: 250px;
+      &:before{
+        margin-left: -125px;
+        height: 150px;
+        width: 250px;
+      }
+      .fa {
+margin-top: 55px;
+      }
     }
 
 }
@@ -67,6 +75,10 @@
     .work-item-img {
       height: 150px;
       width: 250px;
+      	&:before{
+          height: 150px;
+          width: 250px;
+        }
     }
 }
 /**/
