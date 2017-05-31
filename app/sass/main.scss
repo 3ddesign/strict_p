@@ -194,35 +194,39 @@ h4 {
 		font-size: 15px;
 	}
 
-.col-lg-4,
-.col-md-6,
-.col-sm-12, {
-	text-align: center;
-margin-bottom:30px;
-}
+	,
+	.col-lg-4,
+	.col-md-6,
+	.col-sm-12 {
+		text-align: center;
+		margin-bottom: 30px;
+	}
 }
 
 .work-item {
 	cursor: pointer;
+
 	&-img {
 		width: 360px;
 		height: 260px;
 		background-size: cover;
-		margin-left: 4px;
 		margin: 0 auto;
-		&:hover {
-						 transition: all .5s ease;
-						 transform: scale(1.05);
-						 box-shadow: rgba(0,0,0,.35) 0 0 32px;
-	   &:before{
-			 opacity: .8;
-			 transition: all .5s ease;
 
-		 }
-		 .fa {
-			 opacity: .8;
-		 }
+		&:hover {
+			transition: all 0.5s ease;
+			transform: scale(1.05);
+			box-shadow: rgba(0,0,0,.35) 0 0 32px;
+
+			&:before {
+				opacity: 0.8;
+				transition: all 0.5s ease;
+			}
+
+			.fa {
+				opacity: 0.8;
+			}
 		}
+
 		.fa {
 			font-size: 30px;
 			color: #fff;
@@ -232,26 +236,18 @@ margin-bottom:30px;
 			margin-top: 110px;
 			margin-left: -10px;
 		}
-		&:before{
+
+		&:before {
 			content: '';
 			position: absolute;
 			height: 260px;
 			width: 360px;
 			opacity: 0;
-	  	background-color: $accent-color;
+			background-color: $accent-color;
 			margin-left: -180px;
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
 
 .contact-section {
 	margin-top: 8%;
@@ -278,6 +274,37 @@ margin-bottom:30px;
 	}
 }
 
+.submit {
+	text-align: center;
 
+	input,
+	textarea {
+		width: 550px;
+		height: 60px;
+		padding-left: 20px;
+		margin: 20px auto;
+		display: block;
+		border-radius: 3px;
+		background: none;
+		color: #fff;
+		border: 1px solid #999;
+
+		&:focus,
+		&:hover {
+			border: 1px solid #fff;
+			outline: 0;
+		}
+
+
+	}
+	span {
+				color: #fff;
+	}
+
+	textarea {
+		height: 162px;
+		padding-top: 20px;
+	}
+}
 //to end
 @import 'media';
