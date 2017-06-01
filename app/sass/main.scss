@@ -277,7 +277,8 @@ h4 {
 .submit {
 	text-align: center;
 
-	input,
+	input[type=email],
+	input[type=text],
 	textarea {
 		width: 550px;
 		height: 60px;
@@ -294,17 +295,90 @@ h4 {
 			border: 1px solid #fff;
 			outline: 0;
 		}
-
-
 	}
+
 	span {
-				color: #fff;
+		display: inline-block;
+		color: #fff;
+		line-height: 28px;
+		margin-left: 20px;
+		margin-right: 212px;
 	}
 
 	textarea {
 		height: 162px;
 		padding-top: 20px;
 	}
+
+	input[type=checkbox] {
+		width: 18px;
+		height: 18px;
+		outline: 0;
+	}
+
+	button {
+		width: 140px;
+		height: 47px;
+		outline: 0;
+		border: none;
+		padding-top: 10px;
+	}
 }
+
+footer {
+	text-align: center;
+	max-height: 90;
+
+	p {
+		color: #999;
+		font-size: 15px;
+		line-height: 40px;
+		white-space: nowrap;
+	}
+
+	ul {
+		list-style: none;
+		white-space: nowrap;
+margin-right: 30px;
+		li {
+			display: inline-block;
+			border-radius: 2px;
+			margin-left: 2px;
+
+			&:hover {
+				opacity: 0.8;
+				color: #fff;
+			}
+
+			a {
+				padding-top: 7px;
+				color: #fff;
+				text-align: center;
+				display: block;
+				width: 40px;
+				height: 40px;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.soc-item-facebook {
+		background-color: #3b5998;
+	}
+	.soc-item-twitter {
+		background-color: #55acee;
+	}
+	.soc-item-google {
+		background-color: #dd4b39;
+	}
+	.soc-item-linkedin {
+		background-color: #0976b4;
+	}
+}
+
+
 //to end
 @import 'media';
