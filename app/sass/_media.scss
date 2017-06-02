@@ -27,6 +27,11 @@
     .about-section p {
         font-size: 14px;
     }
+
+    .toggle-mnu {
+      margin-right: 50px;
+      margin-top: 45px;
+    }
 }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
@@ -59,6 +64,10 @@
 margin-top: 55px;
       }
     }
+    .toggle-mnu {
+      margin-right: 20px;
+      margin-top: 25px;
+    }
 
 }
 /* Custom, iPhone Retina */
@@ -79,6 +88,11 @@ margin-top: 55px;
           height: 150px;
           width: 250px;
         }
+    }
+
+    .toggle-mnu {
+      margin-right: 20px;
+      margin-top: 25px;
     }
 }
 /**/

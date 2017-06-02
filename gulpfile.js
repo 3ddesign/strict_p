@@ -31,7 +31,8 @@ gulp.task('js', function() {
 
 gulp.task('scripts', function() {
     return gulp.src([
-        'app/libs/jquery/jquery.min.js'
+        'app/libs/jquery/jquery.min.js',
+        'app/libs/jQuery.mmenu/dist/jquery.mmenu.all.js'
     ])
         .pipe(concat('libs.js'))
         .pipe(gulp.dest('app/js'));
