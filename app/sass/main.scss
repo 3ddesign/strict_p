@@ -447,7 +447,9 @@ footer {
 	}
 
 	&.on span {
+
 		background-color: transparent;
+		transform: rotate(360deg) translate(-1px, 0px);
 	}
 
 	&.on span:before {
