@@ -1,95 +1,142 @@
 $(function() {
+    // Preloader:
+    $(window).on('load', function() {
+        $('.preloader').delay(1000).fadeOut('slow');
+    });
 
-	//menu
-var animove  = function () {
-	  $(".down-link").click(function() {
-	    $("html, body").animate({
-	      scrollTop: $("header").height()
-	    }, "slow");
-	    return false;
-	  });
-	  $("#about").click(function() {
-	    $("html, body").animate({
-	      scrollTop: $(".about-section").offset().top
-	    }, "slow");
-	    return false;
-	  });
-	  $("#works").click(function() {
-	    $("html, body").animate({
-	      scrollTop: $(".work-section").offset().top
-	    }, "slow");
-	    return false;
-	  });
-	  $("#contact").click(function() {
-	    $("html, body").animate({
-	      scrollTop: $("footer").offset().top
-	    }, "slow");
-	    return false;
-	  });
-
-	  $("body").on("click", ".top", function() {
-	    $("html, body").animate({
-	      scrollTop: 0
-	    }, "slow");
-	  });
-};
-
-animove();
-
-	$(".sf-menu").after("<div id='my-menu'>");
-	$(".sf-menu").clone().appendTo("#my-menu");
-	$("#my-menu").find("*").attr("style", "");
-	$("#my-menu").find("ul").removeClass("sf-menu");
-	$("#my-menu").mmenu({
-		 extensions: ["fx-menu-fade"],
-		navbar: {
-			title: "Menu"
-		}
-	});
+    // Initialize wow.js:
+    new WOW().init();
 
 
-	var api = $("#my-menu").data("mmenu");
-	api.bind("closed", function () {
-		$(".toggle-mnu").removeClass("on");
-	});
+    //Pop-up:
+    $(".toform-btn").magnificPopup({
+        type: 'inline',
 
-	$(".mobile-mnu").click(function() {
-		var mmAPI = $("#my-menu").data( "mmenu" );
-		mmAPI.open();
-		var thiss = $(this).find(".toggle-mnu");
-		thiss.toggleClass("on");
-		$(".main-mnu").slideToggle();
-		return false;
-	});
+        fixedContentPos: false,
+        fixedBgPos: true,
 
-animove();
+        overflowY: 'auto',
 
-  // $(".serv-item").animated("fadeInRight");
+        closeBtnInside: true,
+        preloader: false,
 
-  $("body").append('<div class="top"><i class="fa fa-angle-double-up" aria-hidden="true"></i>');
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+    });
+
+    //Slide menu:
+    var animove = function() {
+        $(".down-link").click(function() {
+            $("html, body").animate({
+                scrollTop: $("header").height()
+            }, "slow");
+            return false;
+        });
+        $("#about-mnu").click(function() {
+            $("html, body").animate({
+                scrollTop: $(".about-section").offset().top
+            }, "slow");
+            return false;
+        });
+        $("#home-mnu").click(function() {
+            $("html, body").animate({
+                scrollTop: $("#home").offset().top
+            }, "slow");
+            return false;
+        });
+        $("#works-mnu").click(function() {
+            $("html, body").animate({
+                scrollTop: $(".work-section").offset().top
+            }, "slow");
+            return false;
+        });
+        $("#contact-mnu").click(function() {
+            $("html, body").animate({
+                scrollTop: $("footer").offset().top
+            }, "slow");
+            return false;
+        });
+
+        $("body").on("click", ".top", function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, "slow");
+        });
+    };
+
+    //Mmenu:
+
+    animove();
+
+    $(".sf-menu").after("<div id='my-menu'>");
+    $(".sf-menu").clone().appendTo("#my-menu");
+    $("#my-menu").find("*").attr("style", "");
+    $("#my-menu").find("ul").removeClass("sf-menu");
+    $("#my-menu").mmenu({
+        extensions: ["fx-menu-fade"],
+        navbar: {
+            title: "Menu"
+        }
+    });
 
 
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > $(this).height()) {
-      $(".top").addClass("active");
-    } else {
-      $(".top").removeClass("active");
-    }
-  });
+    var api = $("#my-menu").data("mmenu");
+    api.bind("closed", function() {
+        $(".toggle-mnu").removeClass("on");
+    });
 
-  //Chrome Smooth Scroll
-  try {
-    $.browserSelector();
-    if ($("html").hasClass("chrome")) {
-      $.smoothScroll();
-    }
-  } catch (err) {};
+    $(".mobile-mnu").click(function() {
+        var mmAPI = $("#my-menu").data("mmenu");
+        mmAPI.open();
+        var thiss = $(this).find(".toggle-mnu");
+        thiss.toggleClass("on");
+        $(".main-mnu").slideToggle();
+        return false;
+    });
+
+    animove();
+
+    //Link to TOP:
+    $("body").append('<div class="top"><i class="fa fa-angle-double-up" aria-hidden="true"></i>');
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > $(this).height()) {
+            $(".top").addClass("active");
+        } else {
+            $(".top").removeClass("active");
+        }
+    });
 
 
+    //E-mail Ajax Send
+    $(".callback").submit(function() {
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "mail.php",
+            data: th.serialize()
+        }).done(function() {
+            $(".success").addClass("visible");
+            setTimeout(function() {
+                th.trigger("reset");
+                $(".success").removeClass("visible");
+                $.magnificPopup.close();
+            }, 2000);
+        });
+        return false;
+    });
 
-  //No drag
-  $("img, a").on("dragstart", function(event) {
-    event.preventDefault();
-  });
+    //contact form (not done):
+    $(".cont-btn").click(function() {
+        $(".success").addClass("visible");
+        setTimeout(function() {
+            $(".success").fadeOut('slow');
+        }, 2000);
+    });
 
+    //No drag
+    $("img, a").on("dragstart", function(event) {
+        event.preventDefault();
+    });
 });
